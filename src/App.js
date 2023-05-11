@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import  { useState } from 'react';
 import './App.css';
+import TodoList from './components/jsx/TodoList';
+import NewTodo from './components/jsx/NewTodo';
 
-function App() {
+const App = () => {
+  const [todos, setTodos] = useState([
+    {id: 1, text: "Buy groceries", isChecked: false},
+    {id: 2, text: "Do laundry", isChecked: false},
+    {id: 3, text: "Finish project", isChecked: false}
+  ]);
+
+  const toggleTodo = id => {
+    const newTodos = todos.map(todo =>
+      (todo.id !== id) ? todo : {...todo, isChecked: !todo.isChecked}
+    );
+    setTodos(newTodos);
+  };
+
+  const addTodo = text => {
+    const newTodo = { id: todos.length + 1, text, isChecked: false };
+    setTodos([...todos, newTodo]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>Simple Todo List</h3>
+      <NewTodo addTodo={addTodo} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
     </div>
   );
 }

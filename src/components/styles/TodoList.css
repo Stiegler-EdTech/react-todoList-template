@@ -1,0 +1,15 @@
+.todoList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
+    margin:auto;
+  }
+  
+  .todoItemContainer {
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px 0;
+    padding: 10px;
+  }

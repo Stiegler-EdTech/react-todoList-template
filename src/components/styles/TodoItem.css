@@ -1,0 +1,9 @@
+.todoItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .todoItem p {
+    margin-left: 10px;
+  }
