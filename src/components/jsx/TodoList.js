@@ -1,16 +1,14 @@
-import TodoItem from './TodoItem';
-import '../styles/TodoList.css'
+import TodoItem from "./TodoItem";
+import "../styles/TodoList.css";
 
 const TodoList = (props) => {
-    return (
-      <div className="todoList">
-        {props.todos.map(item => (
-          <div className="todoItemContainer" key={item.id}>
-            <TodoItem item={item} />
-          </div>
-        ))}
-      </div>
-    );
-  }
+  return (
+    <div className="todoList">
+      <TodoItem item={props.todos[0]} />
+      <TodoItem item={props.todos[1]} />
+      <TodoItem item={props.todos[2]} />
+    </div>
+  );
+};
 
 export default TodoList;

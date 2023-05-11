@@ -1,10 +1,16 @@
 .todoItem {
-    display: flex;
-    align-items: center;
-    
-  }
+  display: flex;
+  align-items: center;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px 0;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.749);
+}
 
-  .todoItem p {
-    margin-left: 10px;
-    font-size: 18px;
-  }
+.todoItem p {
+  margin-left: 10px;
+  font-size: 18px;
+}
