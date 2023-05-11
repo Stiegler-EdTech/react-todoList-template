@@ -1,14 +1,10 @@
 import { useState } from 'react';
 import '../styles/NewTodo.css'
-const NewTodo = (props) => {
+const NewTodo = () => {
     const [inputValue, setInputValue] = useState('');
   
-    const handleSubmit = (event) => {
+    const submitHandler = (event) => {
       event.preventDefault();
-      if (inputValue.trim()) {
-        props.addTodo(inputValue.trim());
-        setInputValue('');
-      }
     };
 
     const inputChangeHandler = (event) => {
@@ -16,7 +12,7 @@ const NewTodo = (props) => {
     }
   
     return (
-      <form className="newTodoForm" onSubmit={handleSubmit}>
+      <form className="newTodoForm" onSubmit={submitHandler}>
         <input
           className="newTodoInput"
           type="text"
